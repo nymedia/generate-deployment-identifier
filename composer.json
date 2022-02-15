@@ -1,7 +1,20 @@
 {
     "name": "nymedia/generate-deployment-identifier",
     "description": "Generate a unique enough deployment identifier",
+    "type": "composer-plugin",
     "require": {
-        "eiriksm/gitinfo": "^2.0||^3.0||^4.0"
+        "eiriksm/gitinfo": "^2.0||^3.0||^4.0",
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nymedia\\GenerateDeploymentIdentifier\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "Nymediaas\\GenerateDeploymentIdentifier\\Plugin"
     }
 }
