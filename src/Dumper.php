@@ -26,6 +26,7 @@ class Dumper extends BaseCommand {
     $gitInfo = new GitInfo();
     $installed = hash('sha1', json_encode(InstalledVersions::getAllRawData()));
     $output->write($gitInfo->getShortHash() . '-' . $installed);
+    return 0;
   }
 
 }
