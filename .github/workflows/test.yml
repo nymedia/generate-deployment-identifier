@@ -31,6 +31,8 @@ jobs:
             symfony-console-version: "^6.3.12"
           - php-version: 8.0
             symfony-console-version: "^7.0.3"
+          - php-version: 8.1
+            symfony-console-version: "^7.0.3"
     steps:
       - name: Dump matrix context
         env:
