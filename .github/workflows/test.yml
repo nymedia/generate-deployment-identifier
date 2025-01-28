@@ -17,6 +17,10 @@ jobs:
           - "8.2"
           - "8.3"
           - "8.4"
+        symfony-console-version:
+          # These are taken from the constraints of composer itself, as of 2025-01-28.
+          - "^6.3.12"
+          - "^7.0.3"
     steps:
       - name: Dump matrix context
         env:
@@ -37,8 +41,8 @@ jobs:
       - name: Validate composer.json
         run: composer --verbose validate
 
-      - name: Install dependencies
-        run: composer --verbose install
+      - name: Install dependencies and symfony console
+        run: composer require symfony/console:${{ matrix.symfony-console-version }}
 
       - name: run tests
         run: |
