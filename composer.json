@@ -7,7 +7,18 @@
         "composer-plugin-api": "^2.0"
     },
     "require-dev": {
-        "composer/composer": "^2.0"
+        "composer/composer": "^2.0",
+        "phpstan/phpstan": "^2.1",
+        "slevomat/coding-standard": "^8.15",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "scripts": {
+        "test": [
+            "@composer phpstan",
+            "@composer phpcs"
+        ],
+        "phpstan": "phpstan analyse --level=6 src/",
+        "phpcs": "phpcs -p"
     },
     "autoload": {
         "psr-4": {
@@ -16,5 +27,10 @@
     },
     "extra": {
         "class": "Nymedia\\GenerateDeploymentIdentifier\\Plugin"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
