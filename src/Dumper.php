@@ -14,7 +14,7 @@ class Dumper extends BaseCommand
   /**
    * {@inheritDoc}
    */
-    protected function configure()
+    protected function configure() : void
     {
         $this->setName('dump-deployment-identifier');
     }
