@@ -22,7 +22,7 @@ class Dumper extends BaseCommand
   /**
    * {@inheritDoc}
    */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output) : int
     {
         $gitInfo = new GitInfo();
         $installed = hash('sha1', json_encode(InstalledVersions::getAllRawData()));
