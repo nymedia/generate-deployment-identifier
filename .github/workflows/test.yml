@@ -19,6 +19,7 @@ jobs:
           - "8.4"
         symfony-console-version:
           # These are taken from the constraints of composer itself, as of 2025-01-28.
+          - "^5.4.35"
           - "^6.3.12"
           - "^7.0.3"
     steps:
